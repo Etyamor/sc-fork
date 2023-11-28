@@ -3,7 +3,7 @@
 domain=$1
 email=$2
 
-if [ -z $user ] || [ -z $domain ]; then
+if [ -z $domain ] || [ -z $email ]; then
 	echo "Usage: sc-add-ssl [domain] [email]";
 	exit
 fi
