@@ -1,0 +1,36 @@
+#!/bin/bash
+
+action=$1
+domain=$2
+email=$3
+
+if [ -z "$action" ]; then
+  echo "Usage: sc-ssl [action]";
+  exit
+fi
+
+if [ "$action" == "add" ]; then
+  if [ -z "$domain" ] || [ -z "$email" ]; then
+  	echo "Usage: sc-ssl add [domain] [email]";
+  	exit
+  fi
+  certbot --nginx --agree-tos --non-interactive -d "$domain" -m "$email"
+  exit
+fi
+
+if [ "$action" == "delete" ]; then
+  if [ -z "$domain" ]; then
+    	echo "Usage: sc-ssl delete [domain]";
+    	exit
+  fi
+  certbot delete --cert-name "$domain"
+  exit
+fi
+
+if [ "$action" == "list" ]; then
+  certbot certificates
+  exit
+fi
+
+echo "Wrong action. Possible actions: add, delete, list"
+die
