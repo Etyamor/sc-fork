@@ -9,6 +9,7 @@ if [ -z "$action" ]; then
   exit
 fi
 
+#TODO - need to show custom message instead of default
 if [ "$action" == "add" ]; then
   if [ -z "$domain" ] || [ -z "$email" ]; then
   	echo "Usage: sc-ssl add [domain] [email]";
@@ -18,6 +19,8 @@ if [ "$action" == "add" ]; then
   exit
 fi
 
+#TODO - need to skip confirmation prompt here (Y/n)
+#TODO - need to show custom message instead of default
 if [ "$action" == "delete" ]; then
   if [ -z "$domain" ]; then
     	echo "Usage: sc-ssl delete [domain]";
