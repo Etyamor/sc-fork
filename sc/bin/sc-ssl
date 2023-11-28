@@ -5,7 +5,7 @@ domain=$2
 email=$3
 
 if [ -z "$action" ]; then
-  echo "Usage: sc-ssl [action]";
+  echo "Usage: sc-ssl [action] - Possible actions: add, delete, list";
   exit
 fi
 
