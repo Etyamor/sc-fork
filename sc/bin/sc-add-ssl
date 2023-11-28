@@ -1,10 +1,11 @@
 #!/bin/bash
 
 domain=$1
+email=$2
 
-if [ -z $domain ] ; then
-	echo "Usage: sc-add-ssl [domain]";
+if [ -z $user ] || [ -z $domain ]; then
+	echo "Usage: sc-add-ssl [domain] [email]";
 	exit
 fi
 
-certbot --nginx -d $domain
+certbot --nginx --agree-tos -n -d $domain -m $email
