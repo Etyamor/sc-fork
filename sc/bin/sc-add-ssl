@@ -8,4 +8,4 @@ if [ -z $user ] || [ -z $domain ]; then
 	exit
 fi
 
-certbot --nginx --agree-tos -n -d $domain -m $email
+certbot --nginx --agree-tos --non-interactive -d $domain -m $email
