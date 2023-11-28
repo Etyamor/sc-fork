@@ -33,4 +33,4 @@ if [ "$action" == "list" ]; then
 fi
 
 echo "Wrong action. Possible actions: add, delete, list"
-die
+exit
