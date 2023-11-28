@@ -1,0 +1,10 @@
+#!/bin/bash
+
+domain=$1
+
+if [ -z $domain ] ; then
+	echo "Usage: sc-add-ssl [domain]";
+	exit
+fi
+
+certbot --nginx -d $domain
